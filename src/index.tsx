@@ -1,10 +1,10 @@
 import { Box } from "@material-ui/core";
+import { ComponentPreviewCardsSection } from "./components/ComponentPreviewCardsSection";
 import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
+import { mockComponentPreviewCardMetadataArray } from "./utils/Mocks"
 import React from "react";
 import ReactDOM from "react-dom";
-import Typography from "@material-ui/core/Typography";
 import Header from "./components/Header";
 
 export default function JetpackComposeApp() {
@@ -15,8 +15,11 @@ export default function JetpackComposeApp() {
         <Box height="40%">
           <Header />
         </Box>
-        <Box height="60%">
-          <div style={{ backgroundColor: "white", height: "100%" }}>There</div>
+        <Box>
+          <ComponentPreviewCardsSection
+            sectionTitle="Title"
+            metadataArray={mockComponentPreviewCardMetadataArray}
+          />
         </Box>
       </Box>
     </Container>
@@ -25,13 +28,9 @@ export default function JetpackComposeApp() {
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "#ccff90",
     height: "100vh",
     paddingLeft: "0",
-    paddingRight: "0"
-  },
-  headerContainer: {
-    // height: "30%",
+    paddingRight: "0",
   },
 });
 

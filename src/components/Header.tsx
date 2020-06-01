@@ -21,10 +21,9 @@ const useStyles = makeStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginLeft:"0"
+    marginLeft:"0",
   },
 });
-
 
 export function HeaderText() {
   const classes = headerTextStyles()
