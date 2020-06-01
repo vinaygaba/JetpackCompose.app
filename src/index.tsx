@@ -1,3 +1,4 @@
+import { Box } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -5,7 +6,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Typography from "@material-ui/core/Typography";
 import Header from "./components/Header";
-import { Box } from "@material-ui/core";
 
 export default function JetpackComposeApp() {
   const classes = useStyles();
@@ -26,7 +26,9 @@ export default function JetpackComposeApp() {
 const useStyles = makeStyles({
   root: {
     backgroundColor: "#ccff90",
-    height: "100vh"
+    height: "100vh",
+    paddingLeft: "0",
+    paddingRight: "0"
   },
   headerContainer: {
     // height: "30%",
