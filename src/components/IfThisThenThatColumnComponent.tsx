@@ -1,7 +1,7 @@
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { Box } from "@material-ui/core";
 import classicAndroidVsJetpackComposeMap from "../utils/Data";
-import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import IfThisThenThatColumnComponentType from "../models/IfThisThenThatColumnComponentType";
 import JetpackComposeMetadata from "../models/JetpackComposeMetadata";
 import Link from "@material-ui/core/Link";
@@ -21,14 +21,6 @@ interface IfThisThenThanColumnComponentProps {
   componentType: IfThisThenThatColumnComponentType;
   handleChange: (value: string) => void;
 }
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: "#ccff90",
-    },
-  },
-});
 
 export const IfThisThenThanColumnComponent: FunctionComponent<IfThisThenThanColumnComponentProps> = (
   props
@@ -55,12 +47,12 @@ export const IfThisThenThanColumnComponent: FunctionComponent<IfThisThenThanColu
             <ThemeProvider theme={theme}>
               <Autocomplete
                 id="combo-box-demo"
+                value={validSelectedKey(props.selectedKey, props.map) ? props.selectedKey: ""}
                 options={classicAndroid}
                 classes={{
                   option: classes.dropdownOptions,
                 }}
                 onInputChange={(event, newInputValue) => {
-                  console.log(newInputValue);
                   props.handleChange(newInputValue);
                 }}
                 getOptionLabel={(option) => option}
@@ -87,7 +79,7 @@ export const IfThisThenThanColumnComponent: FunctionComponent<IfThisThenThanColu
               align="center"
               className={classes.composableValue}
             >
-              {props.selectedKey === "" ? (
+              {!validSelectedKey(props.selectedKey, props.map) ? (
                 breakpointUpLg ? (
                   <div>
                     <span role="img" aria-label="Pointing in Left Direction">
@@ -118,7 +110,7 @@ export const IfThisThenThanColumnComponent: FunctionComponent<IfThisThenThanColu
         </Box>
 
         {props.componentType === IfThisThenThatColumnComponentType.VALUE &&
-        props.selectedKey !== "" ? (
+        validSelectedKey(props.selectedKey, props.map) ? (
           <>
             <Box className={classes.linkSection}>
               <Link
@@ -159,6 +151,13 @@ function getTypographyClass(
     : classes.typographyValue;
 }
 
+function validSelectedKey(
+  key: string,
+  map: Map<string, JetpackComposeMetadata>
+) {
+  return key.length !== 0 && map.get(key) !== undefined;
+}
+
 export const useStyles = makeStyles<Theme>((theme: Theme) => ({
   boxCenter: {
     width: "100%",
@@ -178,7 +177,7 @@ export const useStyles = makeStyles<Theme>((theme: Theme) => ({
     marginBottom: 100,
     marginTop: 100,
     fontWeight: "bold",
-    fontFamily: "Limelight",
+    fontFamily: "Roboto",
   },
   typographyValue: {
     fontSize: 50,
@@ -189,8 +188,8 @@ export const useStyles = makeStyles<Theme>((theme: Theme) => ({
       fontSize: 30,
     },
     color: "#558b2f",
-    fontWeight: "bold",
-    fontFamily: "Limelight",
+    fontWeight: "bolder",
+    fontFamily: "Roboto",
   },
   linkSection: {
     marginTop: "10%",

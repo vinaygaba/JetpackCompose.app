@@ -1,7 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Link from "@material-ui/core/Link";
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import { Box } from "@material-ui/core";
 
 export default function IfTHisThenThatFooter() {

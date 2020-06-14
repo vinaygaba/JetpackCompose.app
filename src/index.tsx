@@ -1,5 +1,4 @@
 import IfThisThenThatComponent from "./components/IfThisThenThat";
-import IfThisThenThatFooter from "./components/IfThisThenThatFooter";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -8,11 +7,7 @@ export default function JetpackComposeApp() {
   return (
     <Router>
       <Switch>
-        <Route path="/blogs">
-          <div>Blogs</div>
-        </Route>
-        <Route path="/videos">
-          <div>Videos</div>
+        <Route path="/What-is-the-equivalent-of-:androidParam-in-Jetpack-Compose" render={(props) => <IfThisThenThatComponent />}>
         </Route>
         <Route path="/">
           <IfThisThenThatComponent />
