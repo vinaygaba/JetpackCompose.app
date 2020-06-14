@@ -5,14 +5,13 @@ import { IfThisThenThanColumnComponent } from "./IfThisThenThatColumnComponent";
 import IfThisThenThatColumnComponentType from "../models/IfThisThenThatColumnComponentType";
 import IfThisThenThatFooter from "./IfThisThenThatFooter";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 export default function IfThisThenThatComponent() {
   const classes = useStyles();
   let { androidParam } = useParams();
   const [selectedClassicAndroid, setClassicAndroidValue] = useState("");
   function handleChange(newValue: string) {
-    console.log("Handling change");
     setClassicAndroidValue(newValue);
   }
 
@@ -22,7 +21,6 @@ export default function IfThisThenThatComponent() {
       androidParam !== undefined &&
       classicAndroidVsJetpackComposeMap.get(androidParam) !== null
     ) {
-      console.log("Running effect");
       setClassicAndroidValue(androidParam);
     }
   });

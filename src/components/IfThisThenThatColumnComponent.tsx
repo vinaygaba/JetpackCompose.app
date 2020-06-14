@@ -9,8 +9,9 @@ import React, { FunctionComponent } from "react";
 import TextField from "@material-ui/core/TextField";
 import { Theme } from "@material-ui/core";
 import { ThemeProvider, ClassNameMap } from "@material-ui/styles";
-import Typography from "@material-ui/core/Typography";
+import { useParams, useHistory } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 interface IfThisThenThanColumnComponentProps {
@@ -29,6 +30,7 @@ export const IfThisThenThanColumnComponent: FunctionComponent<IfThisThenThanColu
   const classicAndroid = Array.from(classicAndroidVsJetpackComposeMap.keys());
   const theme = useTheme();
   const breakpointUpLg: boolean = useMediaQuery(theme.breakpoints.up("lg"));
+  const history = useHistory();
 
   return (
     <>
@@ -54,6 +56,7 @@ export const IfThisThenThanColumnComponent: FunctionComponent<IfThisThenThanColu
                 }}
                 onInputChange={(event, newInputValue) => {
                   props.handleChange(newInputValue);
+                  history.replace("/What-is-the-equivalent-of-" + newInputValue + "-in-Jetpack-Compose")
                 }}
                 getOptionLabel={(option) => option}
                 renderInput={(params) => (
