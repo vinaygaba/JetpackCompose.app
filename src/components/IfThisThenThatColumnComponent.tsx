@@ -1,7 +1,7 @@
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { Box } from "@material-ui/core";
 import classicAndroidVsJetpackComposeMap from "../utils/Data";
-import { makeStyles } from "@material-ui/core/styles";
+import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import IfThisThenThatColumnComponentType from "../models/IfThisThenThatColumnComponentType";
 import JetpackComposeMetadata from "../models/JetpackComposeMetadata";
 import Link from "@material-ui/core/Link";
@@ -9,8 +9,7 @@ import React, { FunctionComponent } from "react";
 import TextField from "@material-ui/core/TextField";
 import { Theme } from "@material-ui/core";
 import { ThemeProvider, ClassNameMap } from "@material-ui/styles";
-import { useParams, useHistory } from "react-router-dom";
-import { useTheme } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
@@ -23,12 +22,19 @@ interface IfThisThenThanColumnComponentProps {
   handleChange: (value: string) => void;
 }
 
+const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: "#ccff90",
+      },
+    },
+  });
+
 export const IfThisThenThanColumnComponent: FunctionComponent<IfThisThenThanColumnComponentProps> = (
   props
 ) => {
   const classes = useStyles();
   const classicAndroid = Array.from(classicAndroidVsJetpackComposeMap.keys());
-  const theme = useTheme();
   const breakpointUpLg: boolean = useMediaQuery(theme.breakpoints.up("lg"));
   const history = useHistory();
 
