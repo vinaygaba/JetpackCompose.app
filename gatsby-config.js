@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://www.jetpackcompose.app`,
+  },
   plugins: [
     {
       resolve: "gatsby-source-filesystem",
@@ -29,5 +32,6 @@ module.exports = {
     },
     "gatsby-transformer-json",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
   ],
 };
