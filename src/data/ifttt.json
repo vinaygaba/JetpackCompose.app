@@ -50,7 +50,7 @@
     {
         "classicAndroid": "ConstraintLayout",
         "compose": "Constraint Layout",
-        "exampleUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/blob/master/app/src/main/java/com/example/jetpackcompose/layout/ConstraintLayoutActivity.kt",,
+        "exampleUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/blob/master/app/src/main/java/com/example/jetpackcompose/layout/ConstraintLayoutActivity.kt",
         "documentationUrl": "https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#constraintlayout"
     },
     {
