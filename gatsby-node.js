@@ -21,7 +21,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     component: require.resolve("./src/components/faq/FAQ.tsx"),
   });
   createPage({
-    path: "/quick-bites",
+    path: "/quick-bites", 
     component: require.resolve("./src/components/quickbites/QuickBites.tsx"),
   });
 
