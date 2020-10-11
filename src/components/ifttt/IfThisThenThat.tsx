@@ -48,36 +48,58 @@ export default function IfThisThenThatComponent(
             name="description"
             content="Learn more about using Jetpack Compose in Android. How does Jetpack Compose compare to the existing Android UI Toolkit?"
           />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://jetpackcompose.app/" />
+          <meta
+            property="twitter:title"
+            content="What's the equivalent API in Jetpack Compose?"
+          />
+          <meta
+            property="twitter:description"
+            content="Learn more about using Jetpack Compose in Android. How does Jetpack Compose compare to the existing Android UI Toolkit?"
+          />
+          <meta
+            property="twitter:image"
+            content="https://jetpackcompose.app/JetpackComposeIfThen_Preview_Image.png"
+          />
         </Helmet>
-        <Grid container className={classes.root} spacing={2}>
-          <Grid item xs={12} lg={6} className={classes.firstColumn}>
-            <IfThisThenThanColumnComponent
-              prefix="If you used..."
-              suffix="In Classic Android 🤖💚"
-              selectedKey={
-                props.pageContext ? props.pageContext.classicAndroid : ""
-              }
-              map={classicAndroidVsJetpackComposeMap}
-              handleChange={handleChange}
-              componentType={IfThisThenThatColumnComponentType.KEY}
-            />
+        <main>
+          <Grid container className={classes.root} spacing={2}>
+            <Grid item xs={12} lg={6} className={classes.firstColumn}>
+              <IfThisThenThanColumnComponent
+                prefix="If you used..."
+                suffix="In Classic Android 🤖💚"
+                selectedKey={
+                  props.pageContext ? props.pageContext.classicAndroid : ""
+                }
+                map={classicAndroidVsJetpackComposeMap}
+                handleChange={handleChange}
+                componentType={IfThisThenThatColumnComponentType.KEY}
+              />
+            </Grid>
+            <Grid
+              container
+              item
+              xs={12}
+              lg={6}
+              className={classes.secondColumn}
+            >
+              <IfThisThenThanColumnComponent
+                prefix="Then, you could use..."
+                suffix="In Jetpack Compose 🚀"
+                selectedKey={
+                  props.pageContext ? props.pageContext.classicAndroid : ""
+                }
+                map={classicAndroidVsJetpackComposeMap}
+                handleChange={handleChange}
+                componentType={IfThisThenThatColumnComponentType.VALUE}
+              />
+            </Grid>
+            <Grid item xs={12} className={classes.footer}>
+              <JetpackComposeAppFooter />
+            </Grid>
           </Grid>
-          <Grid container item xs={12} lg={6} className={classes.secondColumn}>
-            <IfThisThenThanColumnComponent
-              prefix="Then, you could use..."
-              suffix="In Jetpack Compose 🚀"
-              selectedKey={
-                props.pageContext ? props.pageContext.classicAndroid : ""
-              }
-              map={classicAndroidVsJetpackComposeMap}
-              handleChange={handleChange}
-              componentType={IfThisThenThatColumnComponentType.VALUE}
-            />
-          </Grid>
-          <Grid item xs={12} className={classes.footer}>
-            <JetpackComposeAppFooter />
-          </Grid>
-        </Grid>
+        </main>
       </div>
     </>
   );

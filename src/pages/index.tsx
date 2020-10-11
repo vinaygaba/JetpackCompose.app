@@ -1,5 +1,6 @@
 // import { ComponentPreviewCardsSection } from "../components/wip/ComponentPreviewCardsSection";
 import FAQPageComponent from "../components/faq/FAQ";
+import { Helmet } from "react-helmet";
 import { mockQnA } from "../utils/Data";
 // import { mockComponentPreviewCardMetadataArray } from "../utils/Mocks";
 import NavigationBar from "../components/core/NavigationBar";
@@ -13,11 +14,19 @@ import { Router, Link } from "@reach/router";
 export default function JetpackComposeApp() {
   return (
     <>
-      <Router>
-        <IfThisThenThatComponent path="/"/>
-        <QuickBitesComponent path="/quick-bites" />
-        <FAQPageComponent listOfQnA={mockQnA} path="/faq" />
-      </Router>
+      <Helmet>
+
+      </Helmet>
+      <header>
+        
+      </header>
+      <main>
+        <Router>
+          <IfThisThenThatComponent path="/" />
+          <QuickBitesComponent path="/quick-bites" />
+          <FAQPageComponent listOfQnA={mockQnA} path="/faq" />
+        </Router>
+      </main>
 
       {/* <Switch> */}
       {/* <Route
