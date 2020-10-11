@@ -23,7 +23,7 @@ function QuickBitesComponent(props: RouteComponentProps) {
           property="twitter:url"
           content="https://jetpackcompose.app/quick-bites"
         />
-        <meta property="twitter:title" content="FJetpack Compose Quick Bites" />
+        <meta property="twitter:title" content="Jetpack Compose Quick Bites" />
         <meta
           property="twitter:description"
           content="Learn Jetpack Compose with easy to consume bites of knowledge!"
