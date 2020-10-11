@@ -30,7 +30,7 @@ function QuickBitesComponent(props: RouteComponentProps) {
         />
         <meta
           property="twitter:image"
-          content="https://jetpackcompose.app/quick_bites_poster.png"
+          content="https://jetpackcompose.app/quick_bites.png"
         />
       </Helmet>
       <main>
