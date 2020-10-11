@@ -20,6 +20,6 @@
     "jsx": "react"
   },
   "include": [
-    "src", "gatsby-node.js", "gatsby-config.js"
+    "src", "gatsby-node.js", "gatsby-config.js", "gatsby-ssr.js"
   ]
 }
