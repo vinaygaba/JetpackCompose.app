@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-28159586-8"
@@ -52,24 +51,12 @@
       property="twitter:image"
       content="https://jetpackcompose.app/JetpackComposeIfThen_Preview_Image.png"
     />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <script src="/socket.io/socket.io.js"></script>
     <title>JetpackCompose.app</title>
   </head>
   <body style="margin: 0">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="___gatsby"></div>
+    <script src="/polyfill.js" nomodule=""></script>
+    <script src="/commons.js"></script>
   </body>
 </html>

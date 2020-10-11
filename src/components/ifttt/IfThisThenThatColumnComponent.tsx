@@ -5,11 +5,11 @@ import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import IfThisThenThatColumnComponentType from "../../models/IfThisThenThatColumnComponentType";
 import JetpackComposeMetadata from "../../models/JetpackComposeMetadata";
 import Link from "@material-ui/core/Link";
+import { navigate } from "gatsby";
 import React, { FunctionComponent } from "react";
 import TextField from "@material-ui/core/TextField";
 import { Theme } from "@material-ui/core";
 import { ThemeProvider, ClassNameMap } from "@material-ui/styles";
-import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
@@ -17,6 +17,7 @@ interface IfThisThenThanColumnComponentProps {
   prefix: string;
   suffix: string;
   selectedKey: string;
+  // TODO: Get rid of this hardcoded map
   map: Map<string, JetpackComposeMetadata>;
   componentType: IfThisThenThatColumnComponentType;
   handleChange: (value: string) => void;
@@ -36,7 +37,6 @@ export const IfThisThenThanColumnComponent: FunctionComponent<IfThisThenThanColu
   const classes = useStyles();
   const classicAndroid = Array.from(classicAndroidVsJetpackComposeMap.keys());
   const breakpointUpLg: boolean = useMediaQuery(theme.breakpoints.up("lg"));
-  const history = useHistory();
 
   return (
     <>
@@ -66,7 +66,7 @@ export const IfThisThenThanColumnComponent: FunctionComponent<IfThisThenThanColu
                 }}
                 onInputChange={(event, newInputValue) => {
                   props.handleChange(newInputValue);
-                  history.replace(
+                  navigate(
                     "/What-is-the-equivalent-of-" +
                       newInputValue +
                       "-in-Jetpack-Compose"
@@ -174,7 +174,7 @@ function validSelectedKey(
   key: string,
   map: Map<string, JetpackComposeMetadata>
 ) {
-  return key.length !== 0 && map.get(key) !== undefined;
+  return key && key.length !== 0 && map.get(key) !== undefined;
 }
 
 export const useStyles = makeStyles<Theme>((theme: Theme) => ({

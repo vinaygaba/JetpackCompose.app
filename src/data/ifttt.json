@@ -1,0 +1,44 @@
+[
+    {
+        "classicAndroid": "AlertDialog",
+        "compose": "AlertDialog",
+        "exampleUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/blob/master/app/src/main/java/com/example/jetpackcompose/material/AlertDialogActivity.kt",
+        "documentationUrl": "https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary#alertdialog"
+    },
+    {
+        "classicAndroid": "AppBar",
+        "compose": "TopAppBar",
+        "exampleUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/blob/master/app/src/main/java/com/example/jetpackcompose/material/DrawerAppActivity.kt?q=TopAppBar#L182",
+        "documentationUrl": "https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary#topappbar"
+    },
+    {
+        "classicAndroid": "android:background",
+        "compose": "Modifier.background",
+        "exampleUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/blob/master/app/src/main/java/com/example/jetpackcompose/customview/MeasuringScaleActivity.kt#L96",
+        "documentationUrl": "https://developer.android.com/reference/kotlin/androidx/compose/foundation/package-summary#background"
+    },
+    {
+        "classicAndroid": "android:layout_weight",
+        "compose": "Modifier.weight",
+        "exampleUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/blob/master/app/src/main/java/com/example/jetpackcompose/layout/ViewLayoutConfigurationsActivity.kt#L78",
+        "documentationUrl": "https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/ColumnScope#weight"
+    },
+    {
+        "classicAndroid": "BottomAppBar",
+        "compose": "BottomAppBar",
+        "exampleUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/blob/master/app/src/main/java/com/example/jetpackcompose/material/BottomNavigationActivity.kt",
+        "documentationUrl": "https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary#bottomappbar"
+    },
+    {
+        "classicAndroid": "Button",
+        "compose": "Button",
+        "exampleUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/blob/master/app/src/main/java/com/example/jetpackcompose/material/ButtonActivity.kt",
+        "documentationUrl": "https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary#button"
+    },
+    {
+        "classicAndroid": "CardView",
+        "compose": "Card",
+        "exampleUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/blob/master/app/src/main/java/com/example/jetpackcompose/material/MaterialActivity.kt#L114",
+        "documentationUrl": "https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary#card"
+    }
+]

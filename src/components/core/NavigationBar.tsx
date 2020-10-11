@@ -4,8 +4,10 @@ import React, { useState, useEffect } from "react";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
-import { withRouter } from "react-router-dom";
-import { Link } from "@material-ui/core";
+// import { withRouter } from "react-router-dom";
+// import { Link } from "@material-ui/core";
+import { Link, navigate } from "gatsby";
+import { useLocation } from "@reach/router";
 
 interface IProps {
   history?: any;
@@ -21,13 +23,14 @@ function a11yProps(index: any) {
 function NavigationBar(props: IProps) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const location = useLocation();
 
   const handleChange = (event: any, value: any) => {
-    props.history.push(value);
+    navigate(value);
     setValue(value);
   };
 
-  useEffect(() => handleChange("", props.history.location.pathname), []);
+  useEffect(() => handleChange("", location.pathname), []);
 
   return (
     <div className={classes.root}>
@@ -42,7 +45,7 @@ function NavigationBar(props: IProps) {
           aria-label="simple tabs example"
           variant="scrollable"
         >
-          <Link href="/" className={classes.logo}>
+          <Link to="/" className={classes.logo}>
             <Typography className={classes.logoText}>
               🚀 JetpackCompose.app
             </Typography>
@@ -84,6 +87,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     marginRight: "8%",
     marginLeft: "10%",
+    textDecoration: "none",
     "&:hover": {
       textDecoration: "none",
     },
@@ -112,4 +116,4 @@ const useStyles = makeStyles({
   },
 });
 
-export default withRouter(NavigationBar);
+export default NavigationBar;
