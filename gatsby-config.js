@@ -19,6 +19,14 @@ module.exports = {
         display: "swap",
       },
     },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     "gatsby-transformer-json",
     "gatsby-plugin-react-helmet",
   ],
