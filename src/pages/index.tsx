@@ -11,6 +11,7 @@ export default function JetpackComposeApp() {
   return (
     <>
       <div className={classes.root}>
+        
         <Router>
           <IfThisThenThatComponent path="/" />
           <QuickBitesComponent path="/quick-bites" />
