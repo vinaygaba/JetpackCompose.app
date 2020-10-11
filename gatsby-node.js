@@ -1,9 +1,20 @@
-exports.createPages = ({ actions: { createPage } }) => {
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const iftttElement = require("./src/data/ifttt.json");
-  const classicAndroidKeys = iftttElement.map(
-    (element) => element.classicAndroid
-  );
-  const composeKeys = iftttElement.map((element) => element.compose);
+
+  const iftttResult = await graphql(`
+    {
+      allIftttJson {
+        edges {
+          node {
+            classicAndroid
+            compose
+            documentationUrl
+            exampleUrl
+          }
+        }
+      }
+    }
+  `);
 
   createPage({
     path: "/faq",
@@ -14,7 +25,8 @@ exports.createPages = ({ actions: { createPage } }) => {
     component: require.resolve("./src/components/quickbites/QuickBites.tsx"),
   });
 
-  iftttElement.forEach((element) => {
+  iftttResult.data.allIftttJson.edges.forEach((edges) => {
+    const element = edges.node;
     createPage({
       path: `What-is-the-equivalent-of-${element.classicAndroid}-in-Jetpack-Compose`,
       component: require.resolve("./src/components/ifttt/IfThisThenThat.tsx"),
@@ -37,10 +49,13 @@ exports.createPages = ({ actions: { createPage } }) => {
       },
     });
   });
+
   createPage({
     path: "/",
     component: require.resolve("./src/components/ifttt/IfThisThenThat.tsx"),
   });
+
+  // This is called when you clear out the selection using the 'x' in the text field.
   createPage({
     path: `What-is-the-equivalent-of--in-Jetpack-Compose`,
     component: require.resolve("./src/components/ifttt/IfThisThenThat.tsx"),
