@@ -13,6 +13,7 @@ import TextField from "@material-ui/core/TextField";
 
 interface ComponentsSearchBarProps {
   onChangeHandler: (value: string[]) => void;
+  componentCategories: string[]
 }
 
 export default function ComponentsSearchBar(props: ComponentsSearchBarProps) {
@@ -29,15 +30,10 @@ export default function ComponentsSearchBar(props: ComponentsSearchBarProps) {
         <Autocomplete
           multiple
           id="tags-outlined"
-          options={componentCategories}
-          getOptionLabel={(option) => option.name}
-          defaultValue={[componentCategories[1]]}
+          options={props.componentCategories}
+          getOptionLabel={(option) => option}
           onChange={(event, value, reason, details) => {
-            // console.log("Event " + event);
-            // console.log("Reason " + reason);
-            // console.log("Details " + details?.option?.name);
-
-            let valueArray = value.map((elem) => elem.name);
+            let valueArray = value.map((elem) => elem);
             props.onChangeHandler(valueArray);
           }}
           renderInput={(params) => (
@@ -53,9 +49,3 @@ export default function ComponentsSearchBar(props: ComponentsSearchBarProps) {
     </>
   );
 }
-
-const componentCategories = [
-  { id: "123", name: "Animation" },
-  { id: "123", name: "Input" },
-  { id: "123", name: "Pagination" },
-];

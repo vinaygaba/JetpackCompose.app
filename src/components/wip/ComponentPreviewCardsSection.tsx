@@ -29,6 +29,12 @@ export default function ComponentPreviewCardsSection(
 ) {
   const classes = useStyles();
   const [searchQuery, setSearchQuery] = useState<string[]>([]);
+  const allComponentCategories = props.pageContext.componentsArray.flatMap(
+    (element) => {
+      return element.categories;
+    }
+  );
+  const uniqueComponentCategories = Array.from(new Set(allComponentCategories));
 
   return (
     <>
@@ -40,7 +46,10 @@ export default function ComponentPreviewCardsSection(
         <Container maxWidth="lg">
           <Grid container className={classes.grid} spacing={2}>
             <Grid item xs={12} className={classes.searchBar}>
-              <ComponentsSearchBar onChangeHandler={setSearchQuery} />
+              <ComponentsSearchBar
+                onChangeHandler={setSearchQuery}
+                componentCategories={uniqueComponentCategories}
+              />
             </Grid>
             <Grid item xs={12}>
               <Grid container spacing={7}>
@@ -80,6 +89,10 @@ function meetsSearchCriteria(
     element.categories.filter((value: string) => searchQuery.includes(value))
       .length > 0
   );
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
 }
 
 const useStyles = makeStyles({
