@@ -15,6 +15,7 @@ export interface ComponentPreviewCardProps {
   imageUrl: string;
   resourceLink: string;
   description: string;
+  categories: string[];
 }
 
 export const ComponentPreviewCard: FunctionComponent<ComponentPreviewCardProps> = (
@@ -40,23 +41,21 @@ export const ComponentPreviewCard: FunctionComponent<ComponentPreviewCardProps> 
             <Grid item className={classes.cardTitleGrid}>
               <Grid container className={classes.cardContentGrid} wrap="nowrap">
                 <Grid item xs={11}>
-                  <Typography variant="body1" className={classes.cardTitle}>
+                  <Typography className={classes.cardTitle}>
                     {props.title}
                   </Typography>
-                </Grid>
-                <Grid item xs={1} alignContent="center">
-                  <FavoriteIcon fontSize="small" color="primary" />
                 </Grid>
               </Grid>
             </Grid>
             <Grid item className={classes.cardTitleGrid}>
-              <Typography variant="subtitle2" className={classes.cardSubtitle}>
+              <Typography className={classes.cardSubtitle}>
                 {props.description}
               </Typography>
             </Grid>
             <Grid item className={classes.cardChipGrid}>
-              <span className={classes.chip}>Text</span>
-              <span className={classes.chip}>Animation</span>
+              {props.categories.map((element) => (
+                <span className={classes.chip}>{element}</span>
+              ))}
             </Grid>
           </Grid>
         </CardContent>
@@ -81,26 +80,37 @@ const useStyles = makeStyles({
   cardContentGrid: {
     width: "100%",
   },
-  cardTitleGrid: {
-    // display: "flex",
-    // justifyContent: "center",
-    // alignItems: "center",
-    // marginLeft: "4%",
-  },
+  cardTitleGrid: {},
   cardChipGrid: {
-    marginTop: "4%",
+    marginTop: "2%",
+    display: "block!important" as "block",
   },
-  cardTitle: {},
+  cardTitle: {
+    fontSize: 20,
+    fontFamily: "Playfair Display",
+  },
   cardSubtitle: {
     overflow: "hidden",
     textOverflow: "ellipsis",
-    WebkitLineClamp: 1,
+    display: "-webkit-box",
+    WebkitLineClamp: 2,
+    WebkitBoxOrient: "vertical",
+    fontSize: 14,
+    fontFamily: "Roboto",
+    color: "#808080",
   },
   chip: {
-    margin: "2%",
-    backgroundColor: "#FAD1E6",
-    color: "#C44250",
+    color: "#FFFFFF",
+    backgroundColor: "#81c1eb",
     padding: "2%",
     borderRadius: "5px",
+    float: "left",
+    marginTop: "2%",
+    "&:first-child": {
+      marginLeft: "0",
+    },
+    "&:not(:first-child)": {
+      marginLeft: "4px",
+    },
   },
 });

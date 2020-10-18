@@ -1,5 +1,4 @@
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-  
   const iftttResult = await graphql(`
     {
       allIftttJson {
@@ -26,6 +25,23 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       }
     }
   `);
+  const componentsResult = await graphql(`
+    {
+      allComponentsJson {
+        edges {
+          node {
+            id
+            title
+            description
+            contributorName
+            url
+            imageUrl
+            categories
+          }
+        }
+      }
+    }
+  `);
 
   let iftttArrray = [];
   iftttResult.data.allIftttJson.edges.forEach((edges) => {
@@ -41,6 +57,12 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
   let qnaArray = qnaResult.data.allQnaJson.edges.map((edges) => {
     return edges.node;
   });
+
+  let componentsArray = componentsResult.data.allComponentsJson.edges.map(
+    (edges) => {
+      return edges.node;
+    }
+  );
 
   createPage({
     path: "/faq",
@@ -89,6 +111,16 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     component: require.resolve("./src/components/ifttt/IfThisThenThat.tsx"),
     context: {
       iftttArray: iftttArrray,
+    },
+  });
+
+  createPage({
+    path: `wip`,
+    component: require.resolve(
+      "./src/components/wip/ComponentPreviewCardsSection.tsx"
+    ),
+    context: {
+      componentsArray: componentsArray,
     },
   });
 };
