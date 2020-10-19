@@ -55,7 +55,7 @@ export default function ComponentPreviewCardsSection(
                 componentCategories={uniqueComponentCategories}
               />
             </Grid>
-            <Grid item>
+            <Grid item xs={12} lg={12}>
               <Grid container spacing={4}>
                 {props.pageContext.componentsArray
                   .filter((element, index, array) =>
