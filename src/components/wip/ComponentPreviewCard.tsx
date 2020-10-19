@@ -23,7 +23,6 @@ export const ComponentPreviewCard: FunctionComponent<ComponentPreviewCardProps> 
   props
 ) => {
   const classes = useStyles();
-  console.log(props.githubStars);
   return (
     <>
       <Card

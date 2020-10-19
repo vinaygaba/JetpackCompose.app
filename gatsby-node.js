@@ -90,10 +90,8 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
   let githubResultMap = new Map();
   githubResult.data.github.search.edges.forEach((edge) => {
     const element = edge.node;
-    console.log(element);
     githubResultMap[element.url] = element;
   });
-  console.log(githubResultMap);
 
   let iftttArrray = [];
   iftttResult.data.allIftttJson.edges.forEach((edges) => {

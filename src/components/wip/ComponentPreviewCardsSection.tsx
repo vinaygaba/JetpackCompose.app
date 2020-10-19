@@ -39,14 +39,6 @@ export default function ComponentPreviewCardsSection(
   const githubMap = new Map<string, any>(
     Object.entries(props.pageContext.githubMap)
   );
-  githubMap.forEach((value: boolean, key: string) => {
-    console.log("Key " + key);
-    console.log(githubMap.size);
-  });
-
-  props.pageContext.componentsArray.forEach((element) => {
-    console.log("Metadata url " + element.url);
-  });
 
   return (
     <>
