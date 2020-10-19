@@ -1,3 +1,5 @@
+var githubParser = require("parse-github-url");
+
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const iftttResult = await graphql(`
     {
@@ -13,6 +15,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       }
     }
   `);
+
   const qnaResult = await graphql(`
     {
       allQnaJson {
@@ -42,6 +45,55 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       }
     }
   `);
+
+  let queryString = "";
+  componentsResult.data.allComponentsJson.edges.forEach((edge) => {
+    const element = edge.node;
+
+    const url = element.url;
+    const parsedGithubResult = githubParser(url);
+    queryString +=
+      "repo:" + parsedGithubResult.owner + "/" + parsedGithubResult.name + " ";
+  });
+
+  const githubResult = await graphql(
+    `
+      query getStarCount($queryString: String!) {
+        github {
+          rateLimit {
+            cost
+            remaining
+            resetAt
+          }
+          search(query: $queryString, type: REPOSITORY, first: 7) {
+            edges {
+              node {
+                ... on GitHub_Repository {
+                  name
+                  url
+                  owner {
+                    avatarUrl
+                  }
+                  stargazers {
+                    totalCount
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    { queryString: queryString }
+  );
+
+  let githubResultMap = new Map();
+  githubResult.data.github.search.edges.forEach((edge) => {
+    const element = edge.node;
+    console.log(element);
+    githubResultMap[element.url] = element;
+  });
+  console.log(githubResultMap);
 
   let iftttArrray = [];
   iftttResult.data.allIftttJson.edges.forEach((edges) => {
@@ -121,6 +173,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     ),
     context: {
       componentsArray: componentsArray,
+      githubMap: githubResultMap,
     },
   });
 };

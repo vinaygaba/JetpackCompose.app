@@ -21,6 +21,7 @@ export interface ComponentPreviewCardsSectionProps extends RouteComponentProps {
         categories: string[];
       }
     ];
+    githubMap: any;
   };
 }
 
@@ -35,6 +36,17 @@ export default function ComponentPreviewCardsSection(
     }
   );
   const uniqueComponentCategories = Array.from(new Set(allComponentCategories));
+  const githubMap = new Map<string, any>(
+    Object.entries(props.pageContext.githubMap)
+  );
+  githubMap.forEach((value: boolean, key: string) => {
+    console.log("Key " + key);
+    console.log(githubMap.size);
+  });
+
+  props.pageContext.componentsArray.forEach((element) => {
+    console.log("Metadata url " + element.url);
+  });
 
   return (
     <>
@@ -45,20 +57,28 @@ export default function ComponentPreviewCardsSection(
       </Typography> */}
         <Container maxWidth="lg">
           <Grid container className={classes.grid} spacing={2}>
-            <Grid item xs={12} className={classes.searchBar}>
+            <Grid item xs={12} lg={12} className={classes.searchBar}>
               <ComponentsSearchBar
                 onChangeHandler={setSearchQuery}
                 componentCategories={uniqueComponentCategories}
               />
             </Grid>
-            <Grid item xs={12}>
-              <Grid container spacing={7}>
+            <Grid item>
+              <Grid container spacing={4}>
                 {props.pageContext.componentsArray
                   .filter((element, index, array) =>
                     meetsSearchCriteria(element, index, array, searchQuery)
                   )
                   .map((metadata) => (
-                    <Grid key={metadata.id} item>
+                    <Grid
+                      key={metadata.id}
+                      item
+                      xs={12}
+                      sm={6}
+                      md={3}
+                      lg={3}
+                      alignContent="center"
+                    >
                       <ComponentPreviewCard
                         title={metadata.title}
                         contributor={metadata.contributorName}
@@ -66,6 +86,9 @@ export default function ComponentPreviewCardsSection(
                         resourceLink={metadata.url}
                         description={metadata.description}
                         categories={metadata.categories}
+                        githubStars={
+                          githubMap.get(metadata.url).stargazers.totalCount
+                        }
                       />
                     </Grid>
                   ))}
@@ -91,15 +114,9 @@ function meetsSearchCriteria(
   );
 }
 
-function onlyUnique(value, index, self) {
-  return self.indexOf(value) === index;
-}
-
 const useStyles = makeStyles({
   root: {
     backgroundColor: "#FAFAFA",
-    paddingLeft: "16px",
-    paddingRight: "16px",
     width: "100%",
     display: "flex",
     justifyContent: "center",
