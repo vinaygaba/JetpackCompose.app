@@ -44,9 +44,6 @@ export default function ComponentPreviewCardsSection(
     <>
       <NavigationBar />
       <div className={classes.root}>
-        {/* <Typography variant="h6" className={classes.title} noWrap={true}>
-        {props.sectionTitle}
-      </Typography> */}
         <Container maxWidth="lg">
           <Grid container className={classes.grid} spacing={2}>
             <Grid item xs={12} lg={12} className={classes.searchBar}>
@@ -108,14 +105,14 @@ function meetsSearchCriteria(
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "#FAFAFA",
     width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: "1%",
   },
   grid: {
-    paddingTop: "1%",
+    paddingTop: "2%",
   },
   title: {
     marginBottom: 0,
