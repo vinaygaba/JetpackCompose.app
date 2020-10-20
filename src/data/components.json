@@ -78,6 +78,19 @@
     ]
   },
   {
+    "id": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example",
+    "title": "Learn Compose By Example",
+    "description": "🚀 This project contains various examples that show you the \"Jetpack Compose\" way",
+    "contributorName": "Vinay Gaba",
+    "url": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example",
+    "imageUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/raw/master/screenshots/jetpack_compose_poster.png",
+    "addedDate": "10-19-2020",
+    "categories": [
+      "Examples",
+      "Tutorial"
+    ]
+  },
+  {
     "id": "https://github.com/zsoltk/compose-router",
     "title": "Compose Router",
     "description": "Routing functionality for Jetpack Compose with back stack",
@@ -112,19 +125,6 @@
     "addedDate": "10-19-2020",
     "categories": [
       "Animation"
-    ]
-  },
-  {
-    "id": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example",
-    "title": "Learn Compose By Example",
-    "description": "🚀 This project contains various examples that show you the \"Jetpack Compose\" way",
-    "contributorName": "Vinay Gaba",
-    "url": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example",
-    "imageUrl": "https://github.com/vinaygaba/Learn-Jetpack-Compose-By-Example/raw/master/screenshots/jetpack_compose_poster.png",
-    "addedDate": "10-19-2020",
-    "categories": [
-      "Examples",
-      "Tutorial"
     ]
   },
   {
