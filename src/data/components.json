@@ -39,11 +39,11 @@
     ]
   },
   {
-    "id": "https://github.com/adibfara/composeclock",
+    "id": "https://github.com/adibfara/ComposeClock",
     "title": "Compose Clock",
     "description": "Particle clock created with Jetpack Compose framework",
     "contributorName": "Adib Faramarzi ",
-    "url": "https://github.com/adibfara/composeclock",
+    "url": "https://github.com/adibfara/ComposeClock",
     "imageUrl": "https://raw.githubusercontent.com/adibfara/ComposeClock/master/demo.gif",
     "addedDate": "10-19-2020",
     "categories": [
