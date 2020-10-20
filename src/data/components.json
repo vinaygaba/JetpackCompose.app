@@ -13,19 +13,6 @@
     ]
   },
   {
-    "id": "https://github.com/skydoves/Orchestra",
-    "title": "Orchestra",
-    "description": "🎺 Jetpack Compose compatible libraries using Balloon, ColorPickerView, PowerSpinner",
-    "contributorName": "Jaewoong Eum",
-    "url": "https://github.com/skydoves/Orchestra",
-    "imageUrl": "https://user-images.githubusercontent.com/24237865/61194943-f9d70380-a6ff-11e9-807f-ba1ca8126f8a.gif",
-    "addedDate": "10-19-2020",
-    "categories": [
-      "Color Picker",
-      "Spinner"
-    ]
-  },
-  {
     "id": "https://github.com/chrisbanes/accompanist",
     "title": "Accompanist",
     "description": "A collection of extension libraries for Jetpack Compose",
@@ -174,6 +161,19 @@
     "addedDate": "10-19-2020",
     "categories": [
       "Examples"
+    ]
+  },
+  {
+    "id": "https://github.com/skydoves/Orchestra",
+    "title": "Orchestra",
+    "description": "🎺 Jetpack Compose compatible libraries using Balloon, ColorPickerView, PowerSpinner",
+    "contributorName": "Jaewoong Eum",
+    "url": "https://github.com/skydoves/Orchestra",
+    "imageUrl": "https://user-images.githubusercontent.com/24237865/61194943-f9d70380-a6ff-11e9-807f-ba1ca8126f8a.gif",
+    "addedDate": "10-19-2020",
+    "categories": [
+      "Color Picker",
+      "Spinner"
     ]
   },
   {
