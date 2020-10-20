@@ -39,6 +39,20 @@ export default function ComponentPreviewCardsSection(
   const githubMap = new Map<string, any>(
     Object.entries(props.pageContext.githubMap)
   );
+  const sortedComponentsArray = props.pageContext.componentsArray.sort(
+    (first: any, second: any) => {
+      const firstGihubStars = githubMap.has(first.url)
+        ? githubMap.get(first.url).stargazers.totalCount
+        : 0;
+      const secondGihubStars = githubMap.has(second.url)
+        ? githubMap.get(second.url).stargazers.totalCount
+        : 0;
+      console.log("First " + firstGihubStars);
+      console.log("Second " + secondGihubStars);
+      return firstGihubStars > secondGihubStars ? -1 : 1;
+    }
+  );
+  console.log(sortedComponentsArray);
 
   return (
     <>
@@ -49,12 +63,12 @@ export default function ComponentPreviewCardsSection(
             <Grid item xs={12} lg={12} className={classes.searchBar}>
               <ComponentsSearchBar
                 onChangeHandler={setSearchQuery}
-                componentCategories={uniqueComponentCategories}
+                componentCategories={uniqueComponentCategories.sort()}
               />
             </Grid>
             <Grid item xs={12} lg={12}>
               <Grid container spacing={4}>
-                {props.pageContext.componentsArray
+                {sortedComponentsArray
                   .filter((element, index, array) =>
                     meetsSearchCriteria(element, index, array, searchQuery)
                   )
@@ -64,7 +78,7 @@ export default function ComponentPreviewCardsSection(
                       item
                       xs={12}
                       sm={6}
-                      md={6}
+                      md={4}
                       lg={3}
                       alignContent="center"
                     >
@@ -76,7 +90,9 @@ export default function ComponentPreviewCardsSection(
                         description={metadata.description}
                         categories={metadata.categories}
                         githubStars={
-                          githubMap.get(metadata.url).stargazers.totalCount
+                          githubMap.get(metadata.url)
+                            ? githubMap.get(metadata.url).stargazers.totalCount
+                            : null
                         }
                       />
                     </Grid>

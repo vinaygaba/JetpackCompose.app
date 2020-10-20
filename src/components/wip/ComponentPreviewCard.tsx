@@ -16,7 +16,7 @@ export interface ComponentPreviewCardProps {
   resourceLink: string;
   description: string;
   categories: string[];
-  githubStars: number;
+  githubStars?: number;
 }
 
 export const ComponentPreviewCard: FunctionComponent<ComponentPreviewCardProps> = (
@@ -46,13 +46,19 @@ export const ComponentPreviewCard: FunctionComponent<ComponentPreviewCardProps> 
                     {props.title}
                   </Typography>
                 </Grid>
-                <Grid item xs={2} className={classes.starGridRow}>
-                  <StarBorderRounded
-                    className={classes.starIcon}
-                    fontSize="small"
-                  />
-                  <span className={classes.starText}>{props.githubStars}</span>
-                </Grid>
+                {props.githubStars ? (
+                  <Grid item xs={2} className={classes.starGridRow}>
+                    <StarBorderRounded
+                      className={classes.starIcon}
+                      fontSize="small"
+                    />
+                    <span className={classes.starText}>
+                      {props.githubStars}
+                    </span>
+                  </Grid>
+                ) : (
+                  ""
+                )}
               </Grid>
             </Grid>
             <Grid item className={classes.cardTitleGrid}>
@@ -75,14 +81,13 @@ export const ComponentPreviewCard: FunctionComponent<ComponentPreviewCardProps> 
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    // width: 264,
     "&:hover": {
       cursor: "pointer",
     },
   },
   media: {
     height: 0,
-    paddingTop: "104%", // 16:9
+    paddingTop: "177%", // 16:9
   },
   cardContent: {},
   cardContentGrid: {
