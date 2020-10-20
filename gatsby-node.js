@@ -93,8 +93,6 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     githubResultMap[element.url] = element;
   });
 
-  console.log(githubResultMap);
-
   let iftttArrray = [];
   iftttResult.data.allIftttJson.edges.forEach((edges) => {
     const element = edges.node;
