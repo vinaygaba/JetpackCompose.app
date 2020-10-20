@@ -31,7 +31,7 @@
     "description": "A collection of extension libraries for Jetpack Compose",
     "contributorName": "Chris Banes",
     "url": "https://github.com/chrisbanes/accompanist",
-    "imageUrl": "https://github.com/chrisbanes/accompanist/blob/main/picasso/images/crossfade.gif",
+    "imageUrl": "https://github.com/chrisbanes/accompanist/raw/main/picasso/images/crossfade.gif",
     "addedDate": "10-19-2020",
     "categories": [
       "Library",
@@ -170,7 +170,7 @@
     "description": "JetDelivery is a sample food delivery app, built with Jetpack Compose",
     "contributorName": "Vipul Asri",
     "url": "https://github.com/vipulasri/JetDelivery",
-    "imageUrl": "https://github.com/vipulasri/JetDelivery/blob/master/art/screenshot-framed-1.png",
+    "imageUrl": "https://github.com/vipulasri/JetDelivery/raw/master/art/screenshot-framed-1.png",
     "addedDate": "10-19-2020",
     "categories": [
       "Examples"
