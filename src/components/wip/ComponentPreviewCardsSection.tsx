@@ -47,8 +47,6 @@ export default function ComponentPreviewCardsSection(
       const secondGihubStars = githubMap.has(second.url)
         ? githubMap.get(second.url).stargazers.totalCount
         : 0;
-      console.log("First " + firstGihubStars);
-      console.log("Second " + secondGihubStars);
       return firstGihubStars > secondGihubStars ? -1 : 1;
     }
   );
