@@ -325,5 +325,17 @@
       "Examples",
       "Animation"
     ]
+  },
+  {
+    "id": "https://github.com/ashar-7/JetMessenger",
+    "title": "JetMessenger",
+    "description": "Facebook messenger clone built with Jetpack Compose",
+    "contributorName": "Ashar Khan",
+    "url": "https://github.com/ashar-7/JetMessenger",
+    "imageUrl": "https://github.com/ashar-7/JetMessenger/raw/master/screenshots/demo.gif",
+    "addedDate": "10-22-2020",
+    "categories": [
+      "Examples"
+    ]
   }
 ]
