@@ -31,7 +31,7 @@ There are 4 main sections in the website:
 The website uses the following frameworks & tools:
 
 - [Gatsby](https://www.gatsbyjs.com/)
-- [Vercel](https://vercel.com/) for hosting the site and continous deployments
+- [Vercel](https://vercel.com/) for hosting the site and continuous deployments
 - [React](https://reactjs.org/)
 - [Forestry](https://forestry.io/) - CMS layer so that I can organize the
   content of the site. All the content is stored within this repo itself in json files. You can find them [here](src/data)
@@ -88,7 +88,7 @@ Build - run with `GITHUB_TOKEN=<TOKEN_FROM_STEP_1> gatsby build` and then `gatsb
 
 Pull requests are welcome! I'd love your help in improving the website. Feel
 free to browse through open issues to look for things that need work. If you
-have a new idea or want to suggest improvements, just oepn a new issue and we
+have a new idea or want to suggest improvements, just open a new issue and we
 can discuss it there 🙏
 
 ## License
