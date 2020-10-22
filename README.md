@@ -2,7 +2,7 @@
 
 [JetpackCompose.app](https://jetpackcompose.app/) is a website that helps you
 learn more about the biggest change in Android development since its inception.
-It consits of tools, tutorials, resources and examples that help you level up
+It consists of tools, tutorials, resources and examples that help you level up
 your Jetpack Compose knowledge.
 
 There are 4 main sections in the website:
