@@ -312,5 +312,18 @@
       "Examples"
     ],
     "contributorName": "Google"
+  },
+  {
+    "id": "https://github.com/Bruno125/Compose-Challenges",
+    "title": "Compose Challenges",
+    "description": "Multiple Compose implementations inspired by Dribble designs and popular apps",
+    "contributorName": "Bruno Aybar",
+    "url": "https://github.com/Bruno125/Compose-Challenges",
+    "imageUrl": "https://github.com/Bruno125/Compose-Challenges/raw/main/assets/flappy-animation.gif",
+    "addedDate": "10-21-2020",
+    "categories": [
+      "Examples",
+      "Animation"
+    ]
   }
 ]
