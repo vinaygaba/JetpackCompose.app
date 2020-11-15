@@ -26,19 +26,6 @@
     ]
   },
   {
-    "id": "https://github.com/skydoves/Landscapist",
-    "title": "Landscapist",
-    "description": "🍂 Jetpack Compose image loading library for requesting and displaying images using Glide, Coil, Fresco.",
-    "contributorName": "Jaewoong Eum",
-    "url": "https://github.com/skydoves/Landscapist",
-    "imageUrl": "https://user-images.githubusercontent.com/24237865/95661452-6abad480-0b6a-11eb-91c4-7cbe40b77927.gif",
-    "addedDate": "11-15-2020",
-    "categories": [
-      "Library",
-      "Image Loading"
-    ]
-  },
-  {
     "id": "https://github.com/alexjlockwood/bees-and-bombs-compose",
     "title": "Bees And Bombs Compose",
     "description": "Implementing some cool animations using Jetpack Compose",
@@ -388,5 +375,18 @@
       "Chart"
     ],
     "title": "Charts"
+  },
+  {
+    "id": "https://github.com/skydoves/Landscapist",
+    "title": "Landscapist",
+    "description": "🍂 Jetpack Compose image loading library for requesting and displaying images using Glide, Coil, Fresco.",
+    "contributorName": "Jaewoong Eum",
+    "url": "https://github.com/skydoves/Landscapist",
+    "imageUrl": "https://user-images.githubusercontent.com/24237865/95661452-6abad480-0b6a-11eb-91c4-7cbe40b77927.gif",
+    "addedDate": "11-15-2020",
+    "categories": [
+      "Library",
+      "Image Loading"
+    ]
   }
 ]
