@@ -64,7 +64,8 @@ const useStyles = makeStyles({
         alignItems: "center",
         background: "#000000",
         bottom: 0,
-        position: 'absolute'
+        position: 'absolute',
+        display: "flex",
     }
 });
 
