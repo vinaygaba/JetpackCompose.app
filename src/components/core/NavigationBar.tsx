@@ -74,12 +74,6 @@ function NavigationBar(props: IProps) {
             className={classes.tab}
             value="/quick-bites"
           />
-          <Tab
-            label="Writing"
-            {...a11yProps(2)}
-            className={classes.tab}
-            value="/writing"
-          />
         </Tabs>
       </Paper>
     </div>
@@ -91,7 +85,7 @@ const useStyles = makeStyles({
     flexGrow: 1,
   },
   header: {
-    // backgroundColor: "#000000",
+    color: "#FFFFFF",
   },
   logo: {
     display: "flex",

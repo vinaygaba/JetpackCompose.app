@@ -21,7 +21,7 @@ export default function BlogPost({
                 {
                     data.allMarkdownRemark.edges.map((edge) => {
                         console.log('Slug ' + edge.node.frontmatter.slug)
-                        return <Link to={edge.node.frontmatter.slug}>
+                        return <Link to={edge.node.frontmatter.slug} className={classes.blogLink}>
                                     <BlogPostCard 
                                     title={edge.node.frontmatter.title}
                                     description="This is the description"
@@ -44,6 +44,9 @@ const useStyles = makeStyles({
         marginTop: "64px",
         marginBottom: "96px",
         textAlign: "center"
+    },
+    blogLink: {
+        textDecoration: "none"
     }
 });
 
@@ -53,10 +56,6 @@ export const pageQuery = graphql`
         edges {
           node {
             html
-            headings {
-              depth
-              value
-            }
             frontmatter {
               title
               slug
