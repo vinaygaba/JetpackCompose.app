@@ -52,7 +52,6 @@ export default function ComponentPreviewCardsSection(
       return firstGihubStars > secondGihubStars ? -1 : 1;
     }
   );
-  console.log(sortedComponentsArray);
 
   return (
     <>

@@ -10,7 +10,7 @@ import { navigate } from "gatsby";
 import NavigationBar from "../core/NavigationBar";
 import parse from "html-react-parser";
 import PageTitle from "../core/PageTitle";
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import Typography from "@material-ui/core/Typography";
 import { RouteComponentProps } from "@reach/router";
 import QnA from "../../models/QnA";
@@ -19,36 +19,29 @@ interface FAQPageComponentProps extends RouteComponentProps {
   pageContext: {
     qnaArray: [any];
     lastUpdateDate: string;
-    currentQnA?: QnA
+    currentQnA?: QnA;
   };
 }
 
 export default function FAQPageComponent(props: FAQPageComponentProps) {
   const classes = useStyles();
-  const executeScroll = () => ref.current.scrollIntoView()  
-  const title = !(props.pageContext.currentQnA?.question.length === 0) ? props.pageContext.currentQnA?.question : "Frequently Asked Questions about Jetpack Compose"
-  const description = !(props.pageContext.currentQnA?.answer.length === 0) ? props.pageContext.currentQnA?.answer : "Find answers to frequently asked questions about Jetpack Compose!"
+  const executeScroll = () => ref.current.scrollIntoView();
+  const title = !(props.pageContext.currentQnA?.question.length === 0)
+    ? props.pageContext.currentQnA?.question
+    : "Frequently Asked Questions about Jetpack Compose";
+  const description = !(props.pageContext.currentQnA?.answer.length === 0)
+    ? props.pageContext.currentQnA?.answer
+    : "Find answers to frequently asked questions about Jetpack Compose!";
 
   return (
     <>
       <Helmet>
-        <title>
-            {title}
-        </title>
-        <meta
-          name="description"
-          content={description}
-        />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://jetpackcompose.app/faq" />
-        <meta
-          property="twitter:title"
-          content={title}
-        />
-        <meta
-          property="twitter:description"
-          content={description}
-        />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
         <meta
           property="twitter:image"
           content="https://jetpackcompose.app/faq_poster.png"
@@ -68,15 +61,18 @@ export default function FAQPageComponent(props: FAQPageComponentProps) {
             {props.pageContext.qnaArray.map((qna) => {
               return (
                 <Accordion
-                  expanded={qna.question === props.pageContext.currentQnA?.question}
+                  expanded={
+                    qna.question === props.pageContext.currentQnA?.question
+                  }
                   onChange={(event, expanded) => {
                     if (expanded) {
-                      navigate("/" + qna.question.replace(/\?/g, "").replace(/ /g, "-"));
+                      navigate(
+                        "/" + qna.question.replace(/\?/g, "").replace(/ /g, "-")
+                      );
                     } else {
                       navigate("/faq");
                     }
                   }}
-  
                 >
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
@@ -93,12 +89,8 @@ export default function FAQPageComponent(props: FAQPageComponentProps) {
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
-              )
-            }
-            
-            )
-            
-            }
+              );
+            })}
           </Container>
 
           <div className={classes.footer}>

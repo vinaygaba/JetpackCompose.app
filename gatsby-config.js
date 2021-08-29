@@ -30,7 +30,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Libre+Baskerville`, `Roboto`, `Playfair%20Display`, `Merriweather`],
+        fonts: [
+          `Libre+Baskerville`,
+          `Roboto`,
+          `Playfair%20Display`,
+          `Merriweather`,
+        ],
         display: "swap",
       },
     },
@@ -79,13 +84,13 @@ module.exports = {
                 "heading[depth=2]": "subheading",
                 paragraph: "para",
                 link: "url",
-                image: "img"
-              }
-            }
+                image: "img",
+              },
+            },
           },
           `gatsby-remark-prismjs`,
-        ]
-      }
+        ],
+      },
     },
     "gatsby-transformer-json",
     "gatsby-plugin-react-helmet",

@@ -1,46 +1,46 @@
 .heading {
-    font-size: 32px;
-    margin-top: 64px;
-    margin-bottom: 16px;
-    font-family: 'Merriweather';
-    font-weight: 900;
-    color: #222222;
-    text-rendering: optimizeLegibility;
+  font-size: 32px;
+  margin-top: 64px;
+  margin-bottom: 16px;
+  font-family: "Merriweather";
+  font-weight: 900;
+  color: #222222;
+  text-rendering: optimizeLegibility;
 }
 
 .subheading {
-    font-size: 25px;
-    margin-top: 64px;
-    margin-bottom: 12px;
-    font-family: 'Merriweather';
-    font-weight: 700;
-    color: #222222;
+  font-size: 25px;
+  margin-top: 64px;
+  margin-bottom: 12px;
+  font-family: "Merriweather";
+  font-weight: 700;
+  color: #222222;
 }
 
 .para {
-    font-size: 19px;
-    margin-bottom: 32px;
-    font-family: 'Merriweather';
-    font-weight: 400;
-    color: #222222;
+  font-size: 19px;
+  margin-bottom: 32px;
+  font-family: "Merriweather";
+  font-weight: 400;
+  color: #222222;
 }
 
 blockquote .para {
-    /* background: #DFEBF6; */
-    font-size: 17px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 16px;
-    margin-bottom: 16px;
-    border-left: 6px solid green;
+  /* background: #DFEBF6; */
+  font-size: 17px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  margin-bottom: 16px;
+  border-left: 6px solid green;
 }
 
 .title {
-    font-size: 38px;
-    font-weight: bold;
-    font-family: 'Merriweather';
-    color: #222222;
-    margin-bottom: 96px;
-    margin-top: 64px;
-    text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  font-family: "Merriweather";
+  color: #222222;
+  margin-bottom: 96px;
+  margin-top: 64px;
+  text-align: center;
 }
