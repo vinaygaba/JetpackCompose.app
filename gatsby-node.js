@@ -207,4 +207,12 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       githubMap: githubResultMap,
     },
   });
+
+  /* Writing Page Generation */
+  createPage({
+    path: "/writing",
+    component: require.resolve(
+      "./src/components/writing/Writing.tsx"
+    ),
+  });
 };

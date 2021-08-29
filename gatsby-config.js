@@ -15,6 +15,13 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "markdown-pages",
+        path: "./src/markdown-pages",
+      },
+    },
+    {
       resolve: `gatsby-plugin-gtag`,
       options: {
         trackingId: `UA-28159586-8`,
@@ -23,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Libre+Baskerville`, `Roboto`, `Playfair%20Display`],
+        fonts: [`Libre+Baskerville`, `Roboto`, `Playfair%20Display`, `Merriweather`],
         display: "swap",
       },
     },
@@ -59,6 +66,26 @@ module.exports = {
       options: {
         siteUrl: `https://www.jetpackcompose.app`,
       },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-classes`,
+            options: {
+              classMap: {
+                "heading[depth=1]": "heading",
+                "heading[depth=2]": "subheading",
+                paragraph: "para",
+                link: "url",
+                image: "img"
+              }
+            }
+          },
+          `gatsby-remark-prismjs`,
+        ]
+      }
     },
     "gatsby-transformer-json",
     "gatsby-plugin-react-helmet",

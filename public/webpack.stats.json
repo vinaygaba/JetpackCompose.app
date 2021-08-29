@@ -1,0 +1,1 @@
+{"errors":[],"warnings":[],"namedChunkGroups":{"polyfill":{"chunks":["polyfill"],"assets":["polyfill.js","polyfill.js.map"],"children":{},"childAssets":{}},"commons":{"chunks":["commons"],"assets":["commons.css","commons.js","commons.css.map","commons.js.map"],"children":{},"childAssets":{}}},"assetsByChunkName":{"polyfill":["polyfill.js"],"commons":["commons.css","commons.js"]}}

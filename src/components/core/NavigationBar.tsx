@@ -34,7 +34,7 @@ function NavigationBar(props: IProps) {
 
   return (
     <div className={classes.root}>
-      <Paper square className={classes.header}>
+      <Paper square className={classes.header} elevation={0}>
         <Tabs
           value={value}
           className={classes.tabs}
@@ -74,6 +74,12 @@ function NavigationBar(props: IProps) {
             className={classes.tab}
             value="/quick-bites"
           />
+          <Tab
+            label="Writing"
+            {...a11yProps(2)}
+            className={classes.tab}
+            value="/writing"
+          />
         </Tabs>
       </Paper>
     </div>
@@ -85,7 +91,7 @@ const useStyles = makeStyles({
     flexGrow: 1,
   },
   header: {
-    backgroundColor: "#000000",
+    // backgroundColor: "#000000",
   },
   logo: {
     display: "flex",
@@ -101,7 +107,7 @@ const useStyles = makeStyles({
   logoText: {
     fontSize: 22,
     fontFamily: "Libre Baskerville",
-    color: "#CCFF90",
+    color: "#222222",
   },
   tabs: {
     height: "10vh",
@@ -113,7 +119,7 @@ const useStyles = makeStyles({
     backgroundColor: "#ccff90",
   },
   tab: {
-    color: "#FFFFFF",
+    color: "#222222",
     fontSize: 15,
     fontWeight: "bolder",
   },
