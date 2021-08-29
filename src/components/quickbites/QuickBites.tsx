@@ -95,12 +95,12 @@ const useStyles = makeStyles({
     marginTop: "2%",
     height: "20vh",
     width: "100%",
-    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     background: "#000000",
     marginBottom: "0px",
     bottom: "0px",
+    position: "fixed"
   },
 });
 
