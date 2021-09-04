@@ -38,7 +38,7 @@ export default function Articles({
               spacing={3}
               className={classes.articleGridContainer}
             >
-              {data.allMarkdownRemark.edges.map((edge) => {
+              {data.allMdx.edges.map((edge) => {
                 return (
                   <Grid item lg={4} xs={12}>
                     <Grid container justify="center">
@@ -110,7 +110,7 @@ const useStyles = makeStyles({
 
 export const pageQuery = graphql`
   query AllBlogs {
-    allMarkdownRemark {
+    allMdx {
       edges {
         node {
           html

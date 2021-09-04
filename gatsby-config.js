@@ -22,6 +22,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: "./src/markdown-pages",
+      },
+    },
+    {
       resolve: `gatsby-plugin-gtag`,
       options: {
         trackingId: `UA-28159586-8`,
@@ -74,21 +80,22 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-classes`,
-            options: {
-              classMap: {
-                "heading[depth=1]": "heading",
-                "heading[depth=2]": "subheading",
-                paragraph: "para",
-                link: "url",
-                image: "img",
-              },
-            },
-          },
+        gatsbyRemarkPlugins: [
+          // {
+          //   resolve: `gatsby-remark-classes`,
+          //   extensions: [`.md`, `.mdx`],
+          //   options: {
+          //     classMap: {
+          //       "heading[depth=1]": "heading",
+          //       "heading[depth=2]": "subheading",
+          //       paragraph: "para",
+          //       link: "url",
+          //       image: "img",
+          //     },
+          //   },
+          // },
           `gatsby-remark-prismjs`,
         ],
       },

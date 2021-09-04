@@ -1,4 +1,4 @@
-.heading {
+.h1 {
   font-size: 32px;
   margin-top: 64px;
   margin-bottom: 16px;
@@ -8,7 +8,7 @@
   text-rendering: optimizeLegibility;
 }
 
-.subheading {
+.h2 {
   font-size: 25px;
   margin-top: 64px;
   margin-bottom: 12px;

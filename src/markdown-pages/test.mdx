@@ -9,6 +9,8 @@ authorImageUrl: "https://jetpackcompose.app/vinay_gaba_profile_picture.jpeg"
 heroImageUrl: "https://a0.muscache.com/im/pictures/0c38042b-8685-4180-8d9b-12a6892ac6d8.jpg?im_q=highq&im_w=720"
 ---
 
+import ArticleCard from "../components/articles/ArticleCard";
+
 This is to test if this integration works fine. Let's see what it takes to get this to work. I'm hopeful that this will work like I expect it to.
 
 # This is a test post
@@ -30,5 +32,12 @@ fun MyButton(
     ...
 }
 ```
+
+<ArticleCard
+  title="Title"
+  description="Description"
+  imageUrl="https://a0.muscache.com/im/pictures/0c38042b-8685-4180-8d9b-12a6892ac6d8.jpg?im_q=highq&im_w=720"
+  date="{edge.node.frontmatter.date}"
+/>
 
 This is to test if this integration works fine. Let's see what it takes to get this to work. I'm hopeful that this will work like I expect it to.

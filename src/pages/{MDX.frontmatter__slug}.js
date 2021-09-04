@@ -1,8 +1,9 @@
-import "../components/articles/articlePost.css";
+require("../components/articles/articlePost.css");
 import Avatar from "@material-ui/core/Avatar";
 import Container from "@material-ui/core/Container";
 import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import NavigationBar from "../components/core/NavigationBar";
 import React from "react";
 require("prismjs/themes/prism-tomorrow.css");
@@ -10,8 +11,8 @@ require("prismjs/themes/prism-tomorrow.css");
 export default function ArticlePost({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark;
+  const { mdx } = data; // data.mdx holds your post data
+  const { frontmatter, body } = mdx;
   return (
     <>
       <Helmet>
@@ -45,10 +46,7 @@ export default function ArticlePost({
               </div>
             </div>
             <img src={frontmatter.heroImageUrl} className="heroImage"></img>
-            <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
+            <MDXRenderer>{body}</MDXRenderer>
           </div>
         </Container>
       </main>
@@ -58,8 +56,8 @@ export default function ArticlePost({
 
 export const pageQuery = graphql`
   query ($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
+    mdx(id: { eq: $id }) {
+      body
       frontmatter {
         slug
         date(formatString: "MMMM DD, YYYY")

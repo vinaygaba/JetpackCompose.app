@@ -10,7 +10,7 @@ interface ArticleCardProps {
   title: string;
   imageUrl: string;
   description: string;
-  date?: string;
+  date: string;
   tags?: [string];
 }
 
