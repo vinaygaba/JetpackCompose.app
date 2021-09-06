@@ -8,6 +8,7 @@ import JetpackComposeAppFooter from "../core/JetpackComposeAppFooter";
 import { makeStyles } from "@material-ui/core/styles";
 import { navigate } from "gatsby";
 import NavigationBar from "../core/NavigationBar";
+import NewsletterRow from "../newsletter/NewsletterRow";
 import parse from "html-react-parser";
 import PageTitle from "../core/PageTitle";
 import React, { useRef } from "react";
@@ -93,6 +94,9 @@ export default function FAQPageComponent(props: FAQPageComponentProps) {
                 </Accordion>
               );
             })}
+            <div className={classes.newsletter}>
+              <NewsletterRow />{" "}
+            </div>
           </Container>
 
           <div className={classes.footer}>
@@ -134,6 +138,13 @@ const useStyles = makeStyles({
       padding: "5px",
       textDecoration: "none",
     },
+  },
+  newsletter: {
+    marginBottom: 64,
+    margin: "auto",
+    maxWidth: 960,
+    textAlign: "center",
+    marginTop: 64,
   },
   footer: {
     marginTop: "2%",

@@ -110,6 +110,9 @@ const useStyles = makeStyles({
   },
   newsletter: {
     marginBottom: 64,
+    margin: "auto",
+    maxWidth: 960,
+    textAlign: "center",
   },
   footer: {
     marginTop: "2%",

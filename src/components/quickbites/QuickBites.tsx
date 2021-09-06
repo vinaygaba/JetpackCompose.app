@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Helmet } from "react-helmet";
 import JetpackComposeAppFooter from "../core/JetpackComposeAppFooter";
 import NavigationBar from "../core/NavigationBar";
+import NewsletterRow from "../newsletter/NewsletterRow";
 import PageTitle from "../core/PageTitle";
 import React from "react";
 import TweetEmbed from "react-tweet-embed";
@@ -70,6 +71,11 @@ function QuickBitesComponent(props: RouteComponentProps) {
               </Grid>
             </Grid>
           </Grid>
+          <Grid container justify="center" spacing={2}>
+            <div className={classes.newsletter}>
+              <NewsletterRow />{" "}
+            </div>
+          </Grid>
         </Grid>
         <div className={classes.footer}>
           <JetpackComposeAppFooter />
@@ -93,6 +99,13 @@ const useStyles = makeStyles({
     marginBottom: "2%",
     marginTop: "5%",
     color: "#222",
+  },
+  newsletter: {
+    marginBottom: 64,
+    margin: "auto",
+    maxWidth: 960,
+    textAlign: "center",
+    marginTop: 64,
   },
   footer: {
     marginTop: "2%",

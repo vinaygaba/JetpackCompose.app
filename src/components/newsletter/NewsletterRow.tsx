@@ -1,7 +1,8 @@
 import addToMailchimp from "gatsby-plugin-mailchimp";
-import { Button, CircularProgress } from "@material-ui/core";
+import { Button, CircularProgress, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import { Theme } from "@material-ui/core";
 import React, { useState, useEffect, FormEvent } from "react";
 
 interface NewsletterRowProps {}
@@ -44,38 +45,49 @@ export default function NewsletterRow(props: NewsletterRowProps) {
       ) : !signupSuccessful ? (
         <>
           <div className={classes.text}>
-            Want Jetpack Compose related deep dives, tips/tricks {"&"} goodies
-            straight in your inbox? <br />
+            Want Jetpack Compose related articles, tips {"&"} goodies straight
+            in your inbox ? <br />
             Sign up to our newsletter for exclusive content and early access 👇
           </div>
-          <form className={classes.form} noValidate autoComplete="off">
-            <TextField
-              id="name"
-              label="Name"
-              className={classes.input}
-              variant="filled"
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
-            />
-            <TextField
-              id="address"
-              label="Email Address"
-              className={classes.input}
-              variant="filled"
-              error={!validEmail(email)}
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-            />
-            <Button
-              variant="contained"
-              className={classes.subscribeButton}
-              onClick={handleSubmit}
-            >
-              Subscribe
-            </Button>
-          </form>
+          <Grid
+            container
+            className={classes.grid}
+            justify="space-around"
+            alignItems="center"
+          >
+            <Grid item xs={12} md={4}>
+              <TextField
+                id="name"
+                label="Name"
+                className={classes.input}
+                variant="filled"
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+              />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <TextField
+                id="address"
+                label="Email Address"
+                className={classes.input}
+                variant="filled"
+                error={!validEmail(email)}
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                }}
+              />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Button
+                variant="contained"
+                className={classes.subscribeButton}
+                onClick={handleSubmit}
+              >
+                Subscribe
+              </Button>
+            </Grid>
+          </Grid>
           <div className={classes.subText}>
             No spam whatsoever and easy to unsubscribe if you don't like it.
           </div>
@@ -98,7 +110,7 @@ export default function NewsletterRow(props: NewsletterRowProps) {
   }
 }
 
-const useStyles = makeStyles({
+export const useStyles = makeStyles<Theme>((theme: Theme) => ({
   root: {
     background: "#0F1B35",
     borderRadius: 8,
@@ -106,10 +118,20 @@ const useStyles = makeStyles({
     marginLeft: 32,
     marginRight: 32,
   },
+  grid: {
+    textAlign: "center",
+    marginTop: 16,
+  },
   text: {
     fontFamily: "Nunito Sans",
     fontWeight: 400,
     fontSize: 20,
+    [theme.breakpoints.down("md")]: {
+      fontSize: 18,
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 16,
+    },
     color: "#FFFFFF",
     textAlign: "center",
   },
@@ -122,9 +144,6 @@ const useStyles = makeStyles({
     marginTop: 16,
   },
   form: {
-    justifyContent: "center",
-    alignItems: "center",
-    display: "flex",
     marginTop: 16,
   },
   input: {
@@ -145,4 +164,4 @@ const useStyles = makeStyles({
     alignItems: "center",
     display: "flex",
   },
-});
+}));

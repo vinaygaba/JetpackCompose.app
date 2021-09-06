@@ -41,7 +41,7 @@ export default function Layout(props: LayoutProps) {
             maxWidth={props.maxWidth}
             className={classes.pageContainer}
           >
-            {props.children}
+            <div className={classes.page}>{props.children}</div>
           </Container>
           <div className={classes.footer}>
             <JetpackComposeAppFooter />
@@ -60,8 +60,10 @@ const useStyles = makeStyles({
   pageContainer: {
     paddingBottom: "11.5rem",
   },
+  page: {
+    marginBottom: 32,
+  },
   footer: {
-    marginTop: "2%",
     height: "11.5rem",
     width: "100%",
     bottom: 0,

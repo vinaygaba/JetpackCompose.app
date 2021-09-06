@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import JetpackComposeAppFooter from "../core/JetpackComposeAppFooter";
 import { makeStyles } from "@material-ui/core/styles";
 import NavigationBar from "../core/NavigationBar";
+import NewsletterRow from "../newsletter/NewsletterRow";
 import PageTitle from "../core/PageTitle";
 import { RouteComponentProps } from "@reach/router";
 import React, { useState, useEffect } from "react";
@@ -142,6 +143,9 @@ export default function ComponentPreviewCardsSection(
                 </Grid>
               </Grid>
             </Grid>
+            <div className={classes.newsletter}>
+              <NewsletterRow />{" "}
+            </div>
           </Container>
         </div>
         <div className={classes.footer}>
@@ -175,6 +179,13 @@ const useStyles = makeStyles({
   title: {
     marginBottom: 0,
     paddingBottom: 0,
+  },
+  newsletter: {
+    marginBottom: 64,
+    margin: "auto",
+    maxWidth: 960,
+    textAlign: "center",
+    marginTop: 64,
   },
   footer: {
     marginTop: "2%",
