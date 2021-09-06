@@ -4,6 +4,12 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: directory
+  path: src/markdown-pages
+  label: Articles
+  create: all
+  match: "**/*"
+  new_doc_ext: md
 - type: document
   path: src/data/catalog.json
   label: Components

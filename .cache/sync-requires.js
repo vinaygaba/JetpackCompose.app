@@ -10,6 +10,7 @@ exports.components = {
   "component---src-components-catalog-component-preview-cards-section-tsx": hot(preferDefault(require("/Users/vinay_gaba/repos/JetpackCompose.app/src/components/catalog/ComponentPreviewCardsSection.tsx"))),
   "component---src-components-faq-faq-tsx": hot(preferDefault(require("/Users/vinay_gaba/repos/JetpackCompose.app/src/components/faq/FAQ.tsx"))),
   "component---src-components-ifttt-if-this-then-that-tsx": hot(preferDefault(require("/Users/vinay_gaba/repos/JetpackCompose.app/src/components/ifttt/IfThisThenThat.tsx"))),
+  "component---src-components-newsletter-newsletter-signup-page-tsx": hot(preferDefault(require("/Users/vinay_gaba/repos/JetpackCompose.app/src/components/newsletter/NewsletterSignupPage.tsx"))),
   "component---src-components-quickbites-quick-bites-tsx": hot(preferDefault(require("/Users/vinay_gaba/repos/JetpackCompose.app/src/components/quickbites/QuickBites.tsx"))),
   "component---src-pages-markdown-remark-frontmatter-slug-js": hot(preferDefault(require("/Users/vinay_gaba/repos/JetpackCompose.app/src/pages/{MarkdownRemark.frontmatter__slug}.js")))
 }

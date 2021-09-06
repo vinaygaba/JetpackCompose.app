@@ -236,4 +236,11 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     path: "/articles",
     component: require.resolve("./src/components/articles/Articles.tsx"),
   });
+
+  createPage({
+    path: "/newsletter-signup",
+    component: require.resolve(
+      "./src/components/newsletter/NewsletterSignupPage.tsx"
+    ),
+  });
 };
