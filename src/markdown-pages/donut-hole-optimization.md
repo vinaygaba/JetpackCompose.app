@@ -155,9 +155,11 @@ _TODO_
 We see that there's a couple lambda scopes at play in the first example i.e the scope of the `MyComponent` function and the scope of `CustomText` function. Furthermore, `CustomText` is in the lambda scope of the `MyComponent` function. When the value of the the counter changes, we previously noticed that both these scopes were being reinvoked and here's why -
 
 - `CustomText` is recomposed because its text parameter changed as it includes the counter value. This makes sense and is probably what you want anyway.
-- `MyComponent` is recomposed because its lambda scope captures the counter state object and there wasn't a smaller lambda scope available for any recomposition optimizations to kick in.
+- `MyComponent` is recomposed because its lambda scope captures the counter state object and a smaller lambda scope wasn't available for any recomposition optimizations to kick in.
 
-Hey there
+Now you might wonder what I mean when I say "a smaller lambda scope wasn't available" and the next example will make this clear.
 
 ![Example 2](/articles/donut-hole-skipping/example2-scope.png)
 _TODO_
+
+In this example, we previously noticed that only `Button` and `CustomText` composables were invoked when the value of counter updated and `MyComponent` was skipped altogether.
