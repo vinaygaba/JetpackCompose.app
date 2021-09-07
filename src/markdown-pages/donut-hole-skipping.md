@@ -147,7 +147,7 @@ Here's where things start to get really interesting. We see that the body of `My
 
 # Recomposition Scope
 
-In order to understand how Compose is able to optimize recompositions, it is important to take into account the scopes of the functions that we are using in our examples. Compose keeps track of these scopes under-the-hood and divides a Composable function into these smaller units for more efficient recompositions. In order to wrap our heads around what this means, let's look at both our examples again and understand the scopes that are available for the Compose runtime to do its book-keeping.
+In order to understand how Compose is able to optimize recompositions, it is important to take into account the scopes of the composable functions that we are using in our examples. Compose keeps track of these composable scopes under-the-hood and divides a Composable function into these smaller units for more efficient recompositions. It then tries its best to only recompose the scopes that are reading the values that can change. In order to wrap our heads around what this means, let's use this lens and look at both our examples again. This time, we'll take into account the scopes that are available for the Compose runtime to do its book-keeping.
 
 ![Example 1](/articles/donut-hole-skipping/example1-scope.png)
 _TODO_
@@ -157,9 +157,16 @@ We see that there's a couple lambda scopes at play in the first example i.e the 
 - `CustomText` is recomposed because its text parameter changed as it includes the counter value. This makes sense and is probably what you want anyway.
 - `MyComponent` is recomposed because its lambda scope captures the counter state object and a smaller lambda scope wasn't available for any recomposition optimizations to kick in.
 
-Now you might wonder what I mean when I say "a smaller lambda scope wasn't available" and the next example will make this clear.
+Now you might wonder what I meant when I said "a smaller lambda scope wasn't available". Hopefully the next example will make this clear!
 
 ![Example 2](/articles/donut-hole-skipping/example2-scope.png)
 _TODO_
 
-In this example, we previously noticed that only `Button` and `CustomText` composables were invoked when the value of counter updated and `MyComponent` was skipped altogether.
+When we ran the second example, we noticed that only `Button` and `CustomText` were reinvoked when the value of counter updated and `MyComponent` was skipped altogether. Here are some of our observations when we look at this example -
+
+- Even though the initialization of the counter is in the scope of `MyComponent`, it doesn't directly read the value, at least not directly in the parent scope.
+- The `Button` scope is where the value of counter is read and passed to the `CustomText` composable as an input
+
+Since the compose runtim was able to find a smaller scope (Button scope) where the value of the counter was being read, it chose the skip invoking the `MyComponent` scope and only invoked the `Button` scope (where the value is being read) & the `CustomText` scope (as its input changed). In fact, it also skipped invoking the `Button` composable
+
+# What does donut have to do with all this?
