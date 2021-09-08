@@ -30,7 +30,6 @@ export default function NewsletterRow(props: NewsletterRowProps) {
             setLoading(false);
           }, 2000);
         } else {
-          console.log(result.msg);
           setSignupSuccessful(false);
           setLoading(false);
         }
