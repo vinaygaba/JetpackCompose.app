@@ -553,5 +553,17 @@
     "categories": [
       "Tool"
     ]
+  },
+  {
+    "id": "https://github.com/farhanroy/compose-telegram-clone",
+    "title": "Telegram Jetpack Compose Clone",
+    "description": "👉 Clonning telegram user interface using jetpack compose, this project you can learn how to make bubble chat in jetpack compose",
+    "contributorName": "farhanroy",
+    "url": "https://github.com/farhanroy/compose-telegram-clone",
+    "imageUrl": "https://raw.githubusercontent.com/farhanroy/compose-telegram-clone/main/art/Screenshot_1628728414.png",
+    "addedDate": "09-25-2021",
+    "categories": [
+      "Examples"
+    ]
   }
 ]
